@@ -1,0 +1,91 @@
+{
+  "images": [
+    {
+      "id": "test_000",
+      "filename": "test_000.png",
+      "has_mask": true
+    },
+    {
+      "id": "test_001",
+      "filename": "test_001.png",
+      "has_mask": true
+    },
+    {
+      "id": "test_002",
+      "filename": "test_002.png",
+      "has_mask": true
+    },
+    {
+      "id": "test_003",
+      "filename": "test_003.png",
+      "has_mask": true
+    },
+    {
+      "id": "test_004",
+      "filename": "test_004.png",
+      "has_mask": true
+    },
+    {
+      "id": "test_005",
+      "filename": "test_005.png",
+      "has_mask": true
+    },
+    {
+      "id": "test_006",
+      "filename": "test_006.png",
+      "has_mask": true
+    },
+    {
+      "id": "test_007",
+      "filename": "test_007.png",
+      "has_mask": true
+    },
+    {
+      "id": "test_008",
+      "filename": "test_008.png",
+      "has_mask": true
+    },
+    {
+      "id": "test_009",
+      "filename": "test_009.png",
+      "has_mask": true
+    },
+    {
+      "id": "test_010",
+      "filename": "test_010.png",
+      "has_mask": true
+    },
+    {
+      "id": "test_011",
+      "filename": "test_011.png",
+      "has_mask": true
+    },
+    {
+      "id": "test_012",
+      "filename": "test_012.png",
+      "has_mask": true
+    },
+    {
+      "id": "test_013",
+      "filename": "test_013.png",
+      "has_mask": true
+    },
+    {
+      "id": "test_014",
+      "filename": "test_014.png",
+      "has_mask": true
+    }
+  ],
+  "description": "Images Cityscapes avec masques pour l'API de segmentation",
+  "classes": [
+    "flat",
+    "human",
+    "vehicle",
+    "construction",
+    "object",
+    "nature",
+    "sky",
+    "void"
+  ],
+  "total_images": 15
+}

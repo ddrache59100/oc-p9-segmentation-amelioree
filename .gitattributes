@@ -1,0 +1,1 @@
+api_segformer/models/*/model.onnx filter=lfs diff=lfs merge=lfs -text

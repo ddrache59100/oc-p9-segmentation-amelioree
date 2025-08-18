@@ -1,0 +1,29 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+venv*/
+env/
+
+# Déploiement
+azure_deploy*/
+*.zip
+deployment/*.zip
+
+# Résultats de test
+test_results/
+
+# Logs
+*.log
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
