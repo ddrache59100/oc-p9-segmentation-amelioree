@@ -1,0 +1,25 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyc
+.Python
+venv*/
+
+# Jupyter
+.ipynb_checkpoints
+
+# Déploiement Azure
+azure_deploy*/
+*.zip
+
+# Test outputs
+test_results/*.png
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp

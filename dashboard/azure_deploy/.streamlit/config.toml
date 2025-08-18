@@ -1,6 +1,0 @@
-[server]
-port = 8000
-enableCORS = false
-enableXsrfProtection = true
-[browser]
-serverAddress = "0.0.0.0"
