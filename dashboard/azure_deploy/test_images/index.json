@@ -1,0 +1,111 @@
+{
+  "description": "Images de test Cityscapes pour segmentation",
+  "images": [
+    {
+      "id": "test_000",
+      "name": "Image 000",
+      "filename": "test_000.png",
+      "description": "Image de test 000",
+      "has_mask": true
+    },
+    {
+      "id": "test_001",
+      "name": "Image 001",
+      "filename": "test_001.png",
+      "description": "Image de test 001",
+      "has_mask": true
+    },
+    {
+      "id": "test_002",
+      "name": "Image 002",
+      "filename": "test_002.png",
+      "description": "Image de test 002",
+      "has_mask": true
+    },
+    {
+      "id": "test_003",
+      "name": "Image 003",
+      "filename": "test_003.png",
+      "description": "Image de test 003",
+      "has_mask": true
+    },
+    {
+      "id": "test_004",
+      "name": "Image 004",
+      "filename": "test_004.png",
+      "description": "Image de test 004",
+      "has_mask": true
+    },
+    {
+      "id": "test_005",
+      "name": "Image 005",
+      "filename": "test_005.png",
+      "description": "Image de test 005",
+      "has_mask": true
+    },
+    {
+      "id": "test_006",
+      "name": "Image 006",
+      "filename": "test_006.png",
+      "description": "Image de test 006",
+      "has_mask": true
+    },
+    {
+      "id": "test_007",
+      "name": "Image 007",
+      "filename": "test_007.png",
+      "description": "Image de test 007",
+      "has_mask": true
+    },
+    {
+      "id": "test_008",
+      "name": "Image 008",
+      "filename": "test_008.png",
+      "description": "Image de test 008",
+      "has_mask": true
+    },
+    {
+      "id": "test_009",
+      "name": "Image 009",
+      "filename": "test_009.png",
+      "description": "Image de test 009",
+      "has_mask": true
+    },
+    {
+      "id": "test_010",
+      "name": "Image 010",
+      "filename": "test_010.png",
+      "description": "Image de test 010",
+      "has_mask": true
+    },
+    {
+      "id": "test_011",
+      "name": "Image 011",
+      "filename": "test_011.png",
+      "description": "Image de test 011",
+      "has_mask": true
+    },
+    {
+      "id": "test_012",
+      "name": "Image 012",
+      "filename": "test_012.png",
+      "description": "Image de test 012",
+      "has_mask": true
+    },
+    {
+      "id": "test_013",
+      "name": "Image 013",
+      "filename": "test_013.png",
+      "description": "Image de test 013",
+      "has_mask": true
+    },
+    {
+      "id": "test_014",
+      "name": "Image 014",
+      "filename": "test_014.png",
+      "description": "Image de test 014",
+      "has_mask": true
+    }
+  ],
+  "total": 15
+}
