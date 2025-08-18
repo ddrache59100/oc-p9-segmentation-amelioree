@@ -219,12 +219,15 @@ cp models/segformer_b1/model_quantized.onnx azure_deploy_minimal/models/segforme
 # Requirements minimal
 echo "📝 Requirements minimal..."
 cat > azure_deploy_minimal/requirements.txt << EOF
+# requirements.txt - API SegFormer P9 (Azure Production)
 Flask==2.3.2
 flask-cors==4.0.0
 Pillow==10.0.0
 numpy==1.24.3
-onnxruntime==1.16.0
+onnxruntime==1.22.0      # Version récente pour INT8
+transformers==4.30.2      # Nécessaire pour FeatureExtractor
 gunicorn==21.2.0
+requests==2.31.0          # Optionnel, mais petit
 EOF
 
 # Startup - IMPORTANT: référencer application:app
@@ -232,7 +235,7 @@ echo "🚀 Configuration startup..."
 echo "gunicorn --bind=0.0.0.0 --timeout 600 application:app" > azure_deploy_minimal/startup.txt
 
 # Fichiers Azure
-echo "python-3.9" > azure_deploy_minimal/runtime.txt
+echo "python-3.10" > azure_deploy_minimal/runtime.txt
 
 # Calculer la taille
 SIZE=$(du -sh azure_deploy_minimal | cut -f1)

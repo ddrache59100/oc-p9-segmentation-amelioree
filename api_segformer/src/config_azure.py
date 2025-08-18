@@ -1,5 +1,6 @@
-# src/config_azure.py - Configuration minimale pour Azure F1
+# src/config.py
 import os
+from pathlib import Path
 
 class Config:
     # Dimensions
@@ -10,7 +11,7 @@ class Config:
     # Classes Cityscapes
     CITYSCAPES_CLASSES = ['flat', 'human', 'vehicle', 'construction', 
                           'object', 'nature', 'sky', 'void']
-      
+    
     # Couleurs pour visualisation (RGB) - PALETTE CORRIGÉE
     CITYSCAPES_COLORS = [
         [128, 64, 128],   # flat - violet
@@ -22,31 +23,58 @@ class Config:
         [70, 130, 180],   # sky - bleu ciel
         [0, 0, 0]         # void - noir
     ]
-
-    MODELS = {
-    # B0
-    'segformer_b0_int8': {
-        'path': 'models/segformer_b0/model_quantized_azure.onnx',  # Version corrigée
-        'feature_extractor': 'nvidia/segformer-b0-finetuned-cityscapes-1024-1024',
-        'size_mb': 4.6,
-        'iou': 0.587,
-        'precision': 'INT8'
-    },
-    # B1
-    'segformer_b1_int8': {
-        'path': 'models/segformer_b1/model_quantized_azure.onnx',  # Version corrigée
-        'feature_extractor': 'nvidia/segformer-b1-finetuned-cityscapes-1024-1024',
-        'size_mb': 14.2,
-        'iou': 0.667,
-        'precision': 'INT8'
-    },
-    # ... etc
-}
     
-    # Modèle par défaut pour Azure
-    DEFAULT_MODEL = os.environ.get('DEFAULT_MODEL', 'segformer_b1_fp32')
+    # Modèles disponibles (INT8 + FP32)
+    MODELS = {
+        # Modèles INT8 (quantifiés)
+        'segformer_b0_int8': {
+            'path': 'models/segformer_b0/model_quantized.onnx',
+            'feature_extractor': 'nvidia/segformer-b0-finetuned-cityscapes-1024-1024',
+            'size_mb': 4.6,
+            'iou': 0.587,
+            'precision': 'INT8'
+        },
+        'segformer_b1_int8': {
+            'path': 'models/segformer_b1/model_quantized.onnx',
+            'feature_extractor': 'nvidia/segformer-b1-finetuned-cityscapes-1024-1024',
+            'size_mb': 14.2,
+            'iou': 0.667,
+            'precision': 'INT8'
+        },
+        'segformer_b2_int8': {
+            'path': 'models/segformer_b2/model_quantized.onnx',
+            'feature_extractor': 'nvidia/segformer-b2-finetuned-cityscapes-1024-1024',
+            'size_mb': 28.3,
+            'iou': 0.705,
+            'precision': 'INT8'
+        },
+        # Modèles FP32 (originaux)
+        'segformer_b0_fp32': {
+            'path': 'models/segformer_b0/model.onnx',
+            'feature_extractor': 'nvidia/segformer-b0-finetuned-cityscapes-1024-1024',
+            'size_mb': 14.5,
+            'iou': 0.698,
+            'precision': 'FP32'
+        },
+        'segformer_b1_fp32': {
+            'path': 'models/segformer_b1/model.onnx',
+            'feature_extractor': 'nvidia/segformer-b1-finetuned-cityscapes-1024-1024',
+            'size_mb': 52.5,
+            'iou': 0.701,
+            'precision': 'FP32'
+        },
+        'segformer_b2_fp32': {
+            'path': 'models/segformer_b2/model.onnx',
+            'feature_extractor': 'nvidia/segformer-b2-finetuned-cityscapes-1024-1024',
+            'size_mb': 104.9,
+            'iou': 0.760,
+            'precision': 'FP32'
+        }
+    }
+    
+    # Modèle par défaut (meilleur compromis pour Azure F1)
+    DEFAULT_MODEL = os.environ.get('DEFAULT_MODEL', 'segformer_b1_int8')
     
     # API Settings
-    PORT = int(os.environ.get('PORT', 8000))
-    DEBUG = False
-    
+    PORT = int(os.environ.get('PORT', 5000))
+    DEBUG = os.environ.get('DEBUG', 'False').lower() == 'true'

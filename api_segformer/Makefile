@@ -252,8 +252,13 @@ status:
 # Préparation Azure avec script adapté
 azure-prepare:
 	@echo "📦 Préparation du déploiement Azure..."
-	@chmod +x prepare_minimal_deployment.sh
-	./prepare_minimal_deployment.sh
+	@chmod +x scripts/prepare_deployment.sh
+	./scripts/prepare_deployment.sh
+
+# Préparation avec TOUS les modèles
+azure-prepare-all:
+	@echo "📦 Préparation du déploiement Azure avec TOUS les modèles..."
+	./scripts/prepare_deployment_all.sh
 
 azure-check:
 	@echo "🔍 Vérification du package Azure..."
@@ -275,10 +280,23 @@ azure-deploy: azure-prepare
 	cd azure_deploy_minimal && az webapp up \
 		--name $(AZURE_APP_NAME) \
 		--resource-group $(AZURE_RESOURCE_GROUP) \
-		--runtime "PYTHON:3.9" \
+		--runtime "PYTHON:3.10" \
 		--sku F1 \
 		--location "West Europe"
 	@echo ""
+	@echo "✅ Déploiement terminé!"
+	@echo "🌐 URL: https://$(AZURE_APP_NAME).azurewebsites.net"
+
+# Déploiement de tous les modèles
+azure-deploy-all: azure-prepare-all
+	@echo "☁️  Déploiement sur Azure avec TOUS les modèles..."
+	@echo "⚠️  Package de ~220MB - Déploiement long!"
+	cd azure_deploy_all && az webapp up \
+		--name $(AZURE_APP_NAME) \
+		--resource-group $(AZURE_RESOURCE_GROUP) \
+		--runtime "PYTHON:3.10" \
+		--sku F1 \
+		--location "West Europe"
 	@echo "✅ Déploiement terminé!"
 	@echo "🌐 URL: https://$(AZURE_APP_NAME).azurewebsites.net"
 
